@@ -3,6 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
+        - nvm install 20
+        - nvm use 20
         - npm ci --cache .npm --prefer-offline
     build:
       commands:
@@ -15,6 +17,3 @@ frontend:
     paths:
       - node_modules/**/*
       - .npm/**/*
-  environment:
-    variables:
-      _LIVE_UPDATES: '[{"name":"Node.js","pkg":"node","type":"nvm","version":"20"}]'
